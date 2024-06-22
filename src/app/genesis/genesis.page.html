@@ -1,0 +1,77 @@
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Genesis</ion-title>
+      <ion-button slot="end" (click)="reset()" >Reset</ion-button>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="ion-padding"> 
+          <ion-label size="6"> Progress: {{percentage}}%</ion-label> 
+    <ion-grid>
+
+      <ion-row> 
+        <ion-col size="2" size-md="3"><ion-button  [color]="buttonStates[0] ? 'danger' : 'primary'" (click)="onButtonClick(0)">01</ion-button></ion-col>  
+        <ion-col size="2" size-md="3"><ion-button  [color]="buttonStates[1] ? 'danger' : 'primary'" (click)="onButtonClick(1)">02</ion-button></ion-col>
+        <ion-col size="2" size-md="3"><ion-button  [color]="buttonStates[2] ? 'danger' : 'primary'" (click)="onButtonClick(2)">03</ion-button></ion-col>
+        <ion-col size="2" size-md="3"><ion-button  [color]="buttonStates[3] ? 'danger' : 'primary'" (click)="onButtonClick(3)">04</ion-button></ion-col>
+        <ion-col size="2" size-md="3"><ion-button  [color]="buttonStates[4] ? 'danger' : 'primary'" (click)="onButtonClick(4)">05</ion-button></ion-col>
+        <ion-col size="2" size-md="3"><ion-button  [color]="buttonStates[5] ? 'danger' : 'primary'" (click)="onButtonClick(5)">06</ion-button></ion-col>     
+
+        <ion-col size="2" size-md="3"><ion-button  [color]="buttonStates[6] ? 'danger' : 'primary'" (click)="onButtonClick(6)">07</ion-button></ion-col> 
+        <ion-col size="2" size-md="3"><ion-button  [color]="buttonStates[7] ? 'danger' : 'primary'" (click)="onButtonClick(7)">08</ion-button></ion-col>
+        <ion-col size="2" size-md="3"><ion-button  [color]="buttonStates[8] ? 'danger' : 'primary'" (click)="onButtonClick(8)">09</ion-button></ion-col>
+        <ion-col size="2" size-md="3"><ion-button  [color]="buttonStates[9] ? 'danger' : 'primary'" (click)="onButtonClick(9)">10</ion-button></ion-col>
+        <ion-col size="2" size-md="3"><ion-button  [color]="buttonStates[10] ? 'danger' : 'primary'" (click)="onButtonClick(10)">11</ion-button></ion-col>
+        <ion-col size="2" size-md="3"><ion-button  [color]="buttonStates[11] ? 'danger' : 'primary'" (click)="onButtonClick(11)">12</ion-button></ion-col>
+        
+        <ion-col size="2" size-md="3"><ion-button  [color]="buttonStates[12] ? 'danger' : 'primary'"(click)="onButtonClick(12)">13</ion-button></ion-col>
+        <ion-col size="2" size-md="3"><ion-button  [color]="buttonStates[13] ? 'danger' : 'primary'"(click)="onButtonClick(13)">14</ion-button></ion-col>
+        <ion-col size="2" size-md="3"><ion-button  [color]="buttonStates[14] ? 'danger' : 'primary'"(click)="onButtonClick(14)">15</ion-button></ion-col>
+        <ion-col size="2" size-md="3"><ion-button  [color]="buttonStates[15] ? 'danger' : 'primary'"(click)="onButtonClick(15)">16</ion-button></ion-col>
+        <ion-col size="2" size-md="3"><ion-button  [color]="buttonStates[16] ? 'danger' : 'primary'"(click)="onButtonClick(16)">17</ion-button></ion-col>
+        <ion-col size="2" size-md="3"><ion-button  [color]="buttonStates[17] ? 'danger' : 'primary'"(click)="onButtonClick(17)">18</ion-button></ion-col>
+
+        <ion-col size="2" size-md="3"><ion-button  [color]="buttonStates[18] ? 'danger' : 'primary'"(click)="onButtonClick(18)">19</ion-button></ion-col>
+        <ion-col size="2" size-md="3"><ion-button  [color]="buttonStates[19] ? 'danger' : 'primary'"(click)="onButtonClick(19)">20</ion-button></ion-col>
+        <ion-col size="2" size-md="3"><ion-button  [color]="buttonStates[20] ? 'danger' : 'primary'"(click)="onButtonClick(20)">21</ion-button></ion-col>
+        <ion-col size="2" size-md="3"><ion-button  [color]="buttonStates[21] ? 'danger' : 'primary'"(click)="onButtonClick(21)">22</ion-button></ion-col>
+        <ion-col size="2" size-md="3"><ion-button  [color]="buttonStates[22] ? 'danger' : 'primary'"(click)="onButtonClick(22)">23</ion-button></ion-col>
+        <ion-col size="2" size-md="3"><ion-button  [color]="buttonStates[23] ? 'danger' : 'primary'"(click)="onButtonClick(23)">24</ion-button></ion-col>
+
+        <ion-col size="2" size-md="3"><ion-button  [color]="buttonStates[24] ? 'danger' : 'primary'"(click)="onButtonClick(24)">25</ion-button></ion-col>
+        <ion-col size="2" size-md="3"><ion-button  [color]="buttonStates[25] ? 'danger' : 'primary'"(click)="onButtonClick(25)">26</ion-button></ion-col>
+        <ion-col size="2" size-md="3"><ion-button  [color]="buttonStates[26] ? 'danger' : 'primary'"(click)="onButtonClick(26)">27</ion-button></ion-col>
+        <ion-col size="2" size-md="3"><ion-button  [color]="buttonStates[27] ? 'danger' : 'primary'"(click)="onButtonClick(27)">28</ion-button></ion-col>
+        <ion-col size="2" size-md="3"><ion-button  [color]="buttonStates[28] ? 'danger' : 'primary'"(click)="onButtonClick(28)">29</ion-button></ion-col>
+        <ion-col size="2" size-md="3"><ion-button  [color]="buttonStates[29] ? 'danger' : 'primary'"(click)="onButtonClick(29)">30</ion-button></ion-col>
+
+        <ion-col size="2" size-md="3"><ion-button  [color]="buttonStates[30] ? 'danger' : 'primary'"(click)="onButtonClick(30)">31</ion-button></ion-col>
+        <ion-col size="2" size-md="3"><ion-button  [color]="buttonStates[31] ? 'danger' : 'primary'"(click)="onButtonClick(31)">32</ion-button></ion-col>
+        <ion-col size="2" size-md="3"><ion-button  [color]="buttonStates[32] ? 'danger' : 'primary'"(click)="onButtonClick(32)">33</ion-button></ion-col>
+        <ion-col size="2" size-md="3"><ion-button  [color]="buttonStates[33] ? 'danger' : 'primary'"(click)="onButtonClick(33)">34</ion-button></ion-col>
+        <ion-col size="2" size-md="3"><ion-button  [color]="buttonStates[34] ? 'danger' : 'primary'"(click)="onButtonClick(34)">35</ion-button></ion-col>
+        <ion-col size="2" size-md="3"><ion-button  [color]="buttonStates[35] ? 'danger' : 'primary'"(click)="onButtonClick(35)">36</ion-button></ion-col>
+
+        <ion-col size="2" size-md="3"><ion-button  [color]="buttonStates[36] ? 'danger' : 'primary'"(click)="onButtonClick(36)">37</ion-button></ion-col>
+        <ion-col size="2" size-md="3"><ion-button  [color]="buttonStates[37] ? 'danger' : 'primary'"(click)="onButtonClick(37)">38</ion-button></ion-col>
+        <ion-col size="2" size-md="3"><ion-button  [color]="buttonStates[38] ? 'danger' : 'primary'"(click)="onButtonClick(38)">39</ion-button></ion-col>
+        <ion-col size="2" size-md="3"><ion-button  [color]="buttonStates[39] ? 'danger' : 'primary'"(click)="onButtonClick(39)">40</ion-button></ion-col>
+        <ion-col size="2" size-md="3"><ion-button  [color]="buttonStates[40] ? 'danger' : 'primary'"(click)="onButtonClick(40)">41</ion-button></ion-col>
+        <ion-col size="2" size-md="3"><ion-button  [color]="buttonStates[41] ? 'danger' : 'primary'"(click)="onButtonClick(41)">42</ion-button></ion-col>
+
+        <ion-col size="2" size-md="3"><ion-button  [color]="buttonStates[42] ? 'danger' : 'primary'"(click)="onButtonClick(42)">43</ion-button></ion-col>
+        <ion-col size="2" size-md="3"><ion-button  [color]="buttonStates[43] ? 'danger' : 'primary'"(click)="onButtonClick(43)">44</ion-button></ion-col>
+        <ion-col size="2" size-md="3"><ion-button  [color]="buttonStates[44] ? 'danger' : 'primary'"(click)="onButtonClick(44)">45</ion-button></ion-col>
+        <ion-col size="2" size-md="3"><ion-button  [color]="buttonStates[45] ? 'danger' : 'primary'"(click)="onButtonClick(45)">46</ion-button></ion-col>
+        <ion-col size="2" size-md="3"><ion-button  [color]="buttonStates[46] ? 'danger' : 'primary'"(click)="onButtonClick(46)">47</ion-button></ion-col>
+        <ion-col size="2" size-md="3"><ion-button  [color]="buttonStates[47] ? 'danger' : 'primary'"(click)="onButtonClick(47)">48</ion-button></ion-col>
+
+        <ion-col size="2" size-md="3"><ion-button  [color]="buttonStates[48] ? 'danger' : 'primary'"(click)="onButtonClick(48)">49</ion-button></ion-col>
+        <ion-col size="2" size-md="3"><ion-button  [color]="buttonStates[49] ? 'danger' : 'primary'"(click)="onButtonClick(49)">50</ion-button></ion-col>
+      </ion-row>
+
+    </ion-grid>
+
+  </ion-content>
+</div>
