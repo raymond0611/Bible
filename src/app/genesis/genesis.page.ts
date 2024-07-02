@@ -7,14 +7,25 @@ import { ProgressService } from '../progress.service';
   styleUrls: ['./genesis.page.scss'],
 })
 export class GenesisPage implements OnInit {
-
+  
   percentage = 0;
   buttonCount = 50; // 假設你有50個按鈕
   increment = 100 / this.buttonCount; //100除以每一個按鈕的數量
   buttonStates = Array(this.buttonCount).fill(false); // 初始化按鈕狀態為false
-  pageIndex = 0; // 假設這是第一個子頁面
+  pageIndex = 4; // 假設這是第一個子頁面
+  testament: 'old' | 'new' = 'old'; // 新增一個屬性來表示該子頁面是新約還是舊約，並初始化為 'old'
+  oldTestamentPercentage = 0; // 新增一個屬性來保存舊約的百分比，並初始化為 0
+  newTestamentPercentage = 0; // 新增一個屬性來保存新約的百分比，並初始化為 0
 
-  constructor(private progressService: ProgressService) { }
+  constructor(private progressService: ProgressService) {
+    this.pageIndex = 4; // 設置子頁面的索引
+    const link = window.location.href;
+    if (link.includes('old')) {
+      this.testament = 'old';
+    } else if (link.includes('new')) {
+      this.testament = 'new';
+    }
+  }
 
   onButtonClick(index: number) {
     this.buttonStates[index] = !this.buttonStates[index];
@@ -23,14 +34,21 @@ export class GenesisPage implements OnInit {
   }
 
   saveState() {
-    localStorage.setItem('buttonStates', JSON.stringify(this.buttonStates));
+    localStorage.setItem('buttonStates' + this.pageIndex, JSON.stringify(this.buttonStates));
     localStorage.setItem('percentage', this.percentage.toString());
     localStorage.setItem('subPagePercentage' + this.pageIndex, this.percentage.toString()); // 儲存子頁面的百分比
-    this.progressService.updateProgress(); // 更新主頁面的進度
+    this.progressService.subPagePercentageUpdated.emit({pageIndex: this.pageIndex, percentage: this.percentage}); // 更新主頁面的進度
+    if (this.testament === 'old') {
+      this.oldTestamentPercentage = this.percentage; // 更新舊約的百分比
+      localStorage.setItem('oldTestamentSubPagePercentage' + this.pageIndex, this.percentage.toString()); // 儲存舊約子頁面的百分比
+    } else if (this.testament === 'new') {
+      this.newTestamentPercentage = this.percentage; // 更新新約的百分比
+      localStorage.setItem('newTestamentSubPagePercentage' + this.pageIndex, this.percentage.toString()); // 儲存新約子頁面的百分比
+    }
   }
 
   loadState() {
-    const buttonStates = localStorage.getItem('buttonStates');
+    const buttonStates = localStorage.getItem('buttonStates' + this.pageIndex);
     const percentage = localStorage.getItem('percentage');
     if (buttonStates) {
       this.buttonStates = JSON.parse(buttonStates);
@@ -48,7 +66,5 @@ export class GenesisPage implements OnInit {
 
   ngOnInit() {
     this.loadState();
-    
   }
-
 }

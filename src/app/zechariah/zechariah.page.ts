@@ -2,23 +2,23 @@ import { Component, OnInit } from '@angular/core';
 import { ProgressService } from '../progress.service';
 
 @Component({
-  selector: 'app-exodus',
-  templateUrl: './exodus.page.html',
-  styleUrls: ['./exodus.page.scss'],
+  selector: 'app-zechariah',
+  templateUrl: './zechariah.page.html',
+  styleUrls: ['./zechariah.page.scss'],
 })
-export class ExodusPage implements OnInit {
+export class ZechariahPage implements OnInit {
 
   percentage = 0;
-  buttonCount = 40; // 假設你有50個按鈕
+  buttonCount = 14; // 假設你有50個按鈕
   increment = 100 / this.buttonCount; //100除以每一個按鈕的數量
   buttonStates = Array(this.buttonCount).fill(false); // 初始化按鈕狀態為false
-  pageIndex = 5; // 假設這是第一個子頁面
+  pageIndex = 3; // 假設這是第一個子頁面
   testament: 'old' | 'new' = 'old'; // 新增一個屬性來表示該子頁面是新約還是舊約，並初始化為 'old'
   oldTestamentPercentage = 0; // 新增一個屬性來保存舊約的百分比，並初始化為 0
   newTestamentPercentage = 0; // 新增一個屬性來保存新約的百分比，並初始化為 0
 
   constructor(private progressService: ProgressService) {
-    this.pageIndex = 5; // 設置子頁面的索引
+    this.pageIndex = 3; // 設置子頁面的索引
     const link = window.location.href;
     if (link.includes('old')) {
       this.testament = 'old';
@@ -40,10 +40,8 @@ export class ExodusPage implements OnInit {
     this.progressService.subPagePercentageUpdated.emit({pageIndex: this.pageIndex, percentage: this.percentage}); // 更新主頁面的進度
     if (this.testament === 'old') {
       this.oldTestamentPercentage = this.percentage; // 更新舊約的百分比
-      localStorage.setItem('oldTestamentSubPagePercentage' + this.pageIndex, this.percentage.toString()); // 儲存舊約子頁面的百分比
     } else if (this.testament === 'new') {
       this.newTestamentPercentage = this.percentage; // 更新新約的百分比
-      localStorage.setItem('newTestamentSubPagePercentage' + this.pageIndex, this.percentage.toString()); // 儲存新約子頁面的百分比
     }
   }
 

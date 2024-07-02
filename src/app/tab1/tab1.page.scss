@@ -5,3 +5,7 @@ ion-col {
   .clicked {
     background-color: red !important;
     }
+
+    ion-button.completed {
+      --background: green; /* 或者你想要的任何顏色 */
+    }
