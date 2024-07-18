@@ -4,7 +4,7 @@ import { ProgressService } from '../progress.service';
 interface Item {
   name: string;
   link: string;
-  testament: 'old' | 'new'; // 新增一個屬性來表示該子頁面是新約還是舊約
+  testament: 'old' | 'new';
 }
 
 @Component({
@@ -13,18 +13,17 @@ interface Item {
   styleUrls: ['./timothy1.page.scss'],
 })
 export class Timothy1Page implements OnInit {
-
   percentage = 0;
   buttonCount = 6; // 假設你有50個按鈕
   increment = 100 / this.buttonCount; //100除以每一個按鈕的數量
   buttonStates = Array(this.buttonCount).fill(false); // 初始化按鈕狀態為false
-  pageIndex = 6; // 假設這是第一個子頁面
+  pageIndex = 20; // 假設這是第一個子頁面
   testament: 'old' | 'new' = 'new'; // 新增一個屬性來表示該子頁面是新約還是舊約，並初始化為 'old'
   oldTestamentPercentage = 0; // 新增一個屬性來保存舊約的百分比，並初始化為 0
   newTestamentPercentage = 0; // 新增一個屬性來保存新約的百分比，並初始化為 0
 
   constructor(private progressService: ProgressService) {
-    this.pageIndex = 6; // 設置子頁面的索引
+    this.pageIndex = 20; // 設置子頁面的索引
     const link = window.location.href;
     if (link.includes('old')) {
       this.testament = 'old';

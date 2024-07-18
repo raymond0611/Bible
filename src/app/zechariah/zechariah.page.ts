@@ -12,13 +12,13 @@ export class ZechariahPage implements OnInit {
   buttonCount = 14; // 假設你有50個按鈕
   increment = 100 / this.buttonCount; //100除以每一個按鈕的數量
   buttonStates = Array(this.buttonCount).fill(false); // 初始化按鈕狀態為false
-  pageIndex = 3; // 假設這是第一個子頁面
+  pageIndex = 600; // 假設這是第一個子頁面
   testament: 'old' | 'new' = 'old'; // 新增一個屬性來表示該子頁面是新約還是舊約，並初始化為 'old'
   oldTestamentPercentage = 0; // 新增一個屬性來保存舊約的百分比，並初始化為 0
   newTestamentPercentage = 0; // 新增一個屬性來保存新約的百分比，並初始化為 0
 
   constructor(private progressService: ProgressService) {
-    this.pageIndex = 3; // 設置子頁面的索引
+    this.pageIndex = 600; // 設置子頁面的索引
     const link = window.location.href;
     if (link.includes('old')) {
       this.testament = 'old';

@@ -12,7 +12,7 @@
         <ion-label > {{category.title}} </ion-label>
       </ion-item-divider>
       <ion-label *ngFor="let item of category.items; let j = index">
-        <ion-button expand="block" [routerLink]="item.link" [ngClass]="{'completed': subPagePercentages[i * category.items.length + j] === 100}">
+        <ion-button expand="block" [routerLink]="item.link" [ngClass]="{'completed': subPagePercentages && subPagePercentages[i * category.items.length + j] === 100}">
           {{item.name}}
         </ion-button>
       </ion-label>
@@ -34,7 +34,7 @@
   <ion-content class="ion-padding"> 
     <ion-list>
       <ion-list-header *ngFor="let category of categories; let i = index">
-        {{category.title}} ({{categoryPercentages[i]}}%)
+        {{category.title}} ({{categoryPercentages && categoryPercentages[i] != null ? categoryPercentages[i] : 0}}%)
       </ion-list-header>
       <!-- ... -->
     </ion-list>
@@ -46,8 +46,8 @@
         </ion-card-title>
       </ion-card-header>
       <ion-card-content>
-        <ion-progress-bar [value]="oldTestamentPercentage / 100"></ion-progress-bar>
-        <p>{{ oldTestamentPercentage.toFixed(2) }}%</p>
+        <ion-progress-bar [value]="oldTestamentPercentage != null ? oldTestamentPercentage / 100 : 0"></ion-progress-bar>
+        <p>{{ oldTestamentPercentage != null ? oldTestamentPercentage.toFixed(2) : 0 }}%</p>
       </ion-card-content>
     </ion-card>
     
@@ -58,8 +58,8 @@
         </ion-card-title>
       </ion-card-header>
       <ion-card-content>
-        <ion-progress-bar [value]="newTestamentPercentage / 100"></ion-progress-bar>
-        <p>{{ newTestamentPercentage.toFixed(2) }}%</p>
+        <ion-progress-bar [value]="newTestamentPercentage != null ? newTestamentPercentage / 100 : 0"></ion-progress-bar>
+        <p>{{ newTestamentPercentage != null ? newTestamentPercentage.toFixed(2) : 0 }}%</p>
       </ion-card-content>
     </ion-card>
     
@@ -70,9 +70,9 @@
         </ion-card-title>
       </ion-card-header>
       <ion-card-content>
-        <ion-progress-bar [value]="percentage / 100"></ion-progress-bar>
-        <p>{{ percentage.toFixed(2) }}%</p>
+        <ion-progress-bar [value]="percentage != null ? percentage / 100 : 0"></ion-progress-bar>
+        <p>{{ percentage != null ? percentage.toFixed(2) : 0 }}%</p>
       </ion-card-content>
     </ion-card>
   </ion-content>
-</div>
+</div> 
